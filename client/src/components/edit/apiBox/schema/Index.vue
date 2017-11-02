@@ -1,7 +1,7 @@
 <template>
   <div class="schema schema-edit">
     <el-tabs type="card" class="tabs" v-model="activeTab">
-      <el-tab-pane class="tab-item structure" label="Schema" name="structure">
+      <el-tab-pane class="tab-item structure" label="配置" name="structure">
         <params :params="localSchema.params"
                 :name="name"
                 @updateParams="paramsChanged"></params>

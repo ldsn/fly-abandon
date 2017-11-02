@@ -11,7 +11,7 @@
     <schema :schema="response[activeIndex]"
             :fullscreen="fullscreen"
             @change="updateResponse">
-      <el-tab-pane class="tab-item" label="Status" name="status">
+      <el-tab-pane class="tab-item" label="状态" name="status">
         <status-setting :schema="response[activeIndex]" @change="updateStatus"></status-setting>
       </el-tab-pane>
     </schema>
