@@ -21,7 +21,7 @@ module.exports = app => {
         <p>账户名：${user.name}</p>
         <p>验证码：${verifyCode}</p>
       `
-      return this.sent(user.email, 'Api Mocker 找回密码', html)
+      return this.sent(user.email, '找回密码', html)
     }
     passwordTicket (ticket, user) {
       const html = `
@@ -29,7 +29,7 @@ module.exports = app => {
         <p>账户名：${user.name}</p>
         <p>链接：${app.config.clientRoot}/#/reset-pass?ticket=${ticket}</p>
       `
-      return this.sent(user.email, 'Api Mocker 找回密码', html)
+      return this.sent(user.email, '找回密码', html)
     }
     notifyApiChange (api, users) {
       const html = `
@@ -38,7 +38,7 @@ module.exports = app => {
         <p>链接地址：${app.config.clientRoot}/#/doc/${api.group}/${api._id}</p>
       `
       users.map(user => {
-        this.sent(user.email, 'Api Mocker 接口变动提醒', html)
+        this.sent(user.email, '接口变动提醒', html)
       })
     }
   }

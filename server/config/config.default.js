@@ -1,15 +1,16 @@
+require('dotenv').config()
 module.exports = appInfo => {
   const config = {
     bodyParser: {
       jsonLimit: '500kb' // 不能再大了，再大接口实在太不合理了
     },
     mongoose: {
-      url: 'mongodb://127.0.0.1/api-mock'
+      url: 'mongodb://127.0.0.1/fly-api'
     },
     // cookie 加密的keys
-    keys: `${appInfo.name}_{{cookie_secret_key}}`,
+    keys: `${appInfo.name}_${process.env.cookieKey}`,
     // 密码加密的key
-    md5Key: '{{password_secret_key}}',
+    md5Key: process.env.md5Key,
     // 允许跨域携带cookie
     cors: {
       credentials: true
@@ -22,13 +23,13 @@ module.exports = appInfo => {
     },
     // 发送邮件配置
     transporter: {
-      appName: 'Api Mocker',
+      appName: 'Fly 数据配置平台',
       host: 'smtp.qq.com',
       secure: true,
       port: 465,
       auth: {
-        user: '{{email_address}}',
-        pass: '{{email_password}}'
+        user: process.env.emailUser,
+        pass: process.env.emailPass
       }
     }
   }
