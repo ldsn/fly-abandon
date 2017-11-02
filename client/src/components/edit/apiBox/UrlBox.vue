@@ -3,6 +3,7 @@
     <el-row type="flex">
       <el-col :span="24">
         <el-input placeholder="Url保存后自动生成" readonly v-model="url">
+        <!--
           <el-select v-model="method" slot="prepend" placeholder="请选择">
             <el-option label="GET" value="get"></el-option>
             <el-option label="POST" value="post"></el-option>
@@ -10,6 +11,7 @@
             <el-option label="PATCH" value="patch"></el-option>
             <el-option label="DELETE" value="delete"></el-option>
           </el-select>
+            -->
           <copy-button slot="append" :copy-data="url" :disabled="creating">复制</copy-button>
         </el-input>
       </el-col>

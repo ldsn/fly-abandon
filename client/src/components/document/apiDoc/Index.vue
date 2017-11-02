@@ -18,7 +18,7 @@
       </div>
       <div class="field url">
         <div>
-          <label><code>Mock</code>地址：</label>
+          <label><code>配置</code>地址：</label>
           <p class="prod code">{{url}}</p>
         </div>
         <div v-if="api.devUrl">
