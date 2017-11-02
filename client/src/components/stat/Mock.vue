@@ -1,7 +1,7 @@
 <template>
 <div class="chart mock-chart">
   <div class="header">
-    <h4>Mock请求量</h4>
+    <h4>配置请求量</h4>
     <el-button-group class="control" :class="interval">
       <el-button class="week" @click="getData('week')">周</el-button>
       <el-button class="mouth" @click="getData('mouth')">月</el-button>

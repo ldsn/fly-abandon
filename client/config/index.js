@@ -2,7 +2,7 @@
 var path = require('path')
 
 module.exports = {
-  appName: 'DXY API Mocker',
+  appName: 'Fly 数据配置平台',
   docsUrl: 'https://github.com/DXY-F2E/api-mocker/tree/master/docs#api-mocker',
   build: {
     env: require('./prod.env'),
@@ -23,7 +23,7 @@ module.exports = {
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report,
     // 服务端接口的根路径
-    serverRoot: 'api.ldustu.com/mock-api'
+    serverRoot: 'fly.ldustu.com/api'
   },
   dev: {
     env: require('./dev.env'),
@@ -38,6 +38,6 @@ module.exports = {
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
     cssSourceMap: false,
-    serverRoot: 'api.ldustu.com/mock-api'
+    serverRoot: 'fly.ldustu.com/api'
   }
 }

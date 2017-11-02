@@ -45,7 +45,7 @@ export default {
     },
     exampleName: {
       type: String,
-      default: 'Example'
+      default: 'JSON'
     },
     schema: {
       type: Object,

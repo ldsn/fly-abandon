@@ -16,7 +16,7 @@
         </el-option>
       </el-select>
     </el-form-item>
-    <el-form-item label="模拟延迟：" class="delay">
+    <el-form-item label="模拟延迟：" class="delay" style="display:none">
       <el-input v-model="delay" @change="updateDelay"></el-input>
       <em class="unit">ms</em>
     </el-form-item>

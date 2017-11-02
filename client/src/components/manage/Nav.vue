@@ -3,7 +3,7 @@
   <el-menu :default-active="$route.name" :router="true" class="el-menu-vertical">
     <el-menu-item-group title="管理设置">
       <el-menu-item index="ManageApi" :route="{name: 'ManageApi'}">
-        <i class="el-icon-minus"></i>管理<code>API</code>
+        <i class="el-icon-minus"></i>管理<code>配置</code>
       </el-menu-item>
       <el-menu-item index="ManageGroup" :route="{name: 'ManageGroup'}">
         <i class="el-icon-minus"></i>管理分组

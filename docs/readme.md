@@ -1,5 +1,5 @@
-# API Mocker
-API Mocker，不仅仅是mock。最初我们只是想做一个mock server。后来为了提高前后端协同开发效率，不断的演变成如今的接口管理系统。
+# Ffy 配置
+Ffy 配置，可以进行一些数据配置供活动使用
 
 下面介绍下如何使用该系统。
 
@@ -27,7 +27,7 @@ API Mocker，不仅仅是mock。最初我们只是想做一个mock server。后�
 * 如若设置了多个返回值，可以指定返回结果，或者随机结果
 
 
-### 关于参数结构（Schema）填写
+### 关于配置填写
 
 1. 参数属性包括：参数名（key）,参数类型，是否必填，备注，示例值（example）。
 2. 基本参数类型有：`string`,`number`,`boolean`,`object`,`array`。
@@ -36,7 +36,7 @@ API Mocker，不仅仅是mock。最初我们只是想做一个mock server。后�
 5. 如若参数类型选择对象或者对象数组（`array[object]`），则可以再选择子一级参数。
 6. 暂不支持嵌套数组，若选择数组，那么数组里每个值类型都应该一样。
 
-为方便大家理解`Schema`，以及与`Example`的关系，附上 `Schema`的整体json结构。
+为方便大家理解`配置`，以及与`JSON`的关系，附上 `配置`的整体json结构。
 ```javascript
 Param = {
   key: String,            // 参数名
@@ -48,24 +48,24 @@ Param = {
     params: Array[Param]  // 当数组参数类型为object类型时，此字段生效，意义为数组内对象的参数模型
   }
 }
-Schema = {
+配置 = {
   example: Object,
   params: Array[Param]
 }
 ```
 
-### 关于Example
+### 关于JSON
 
-* 每个参数结构体（Schema）都有对应的Example。代表这个参数结构体的示例值。系统支持example与schema的相互转换。
-* schema生成example根据mock规则生成，具体可看mock一章。
-* example生成schema，会自动判断数据类型，并把值作为参数的example。如若值为null,{},则会认为是选填对象，若为[],则为选填数组。
+* 每个配置都有对应的JSON。代表这个参数结构体的示例值。系统支持配置与JSON的相互转换。
+* JSON生成example根据mock规则生成，具体可看mock一章。
+* example生成JSON，会自动判断数据类型，并把值作为参数的example。如若值为null,{},则会认为是选填对象，若为[],则为选填数组。
 
 ## 关于Mock
 
 ### mock规则
 系统引用了[Mock.js](http://mockjs.com/)，拥有了mock随机假数据的能力。但本系统强调接口管理本身，在假数据上不过分引导与强调。
 
-如若设置了`Response`的`Example`，则会返回`Example`的值，如果当中写了[Mock.js](http://mockjs.com/examples.html)的语法，则会生成对应的数据。例如
+如若设置了`Response`的`JSON`，则会返回`JSON`的值，如果当中写了[Mock.js](http://mockjs.com/examples.html)的语法，则会生成对应的数据。例如
 
 ```javascript
 // example值为：
@@ -86,13 +86,13 @@ Schema = {
 // 或其他随机值
 ```
 
-如果没有设置`Response`的`Example`，则会根据对应`Schema`产生mock数据。
+如果没有设置`Response`的`JSON`，则会根据对应`配置`产生配置。
 
-1. 生成mock数据时，会优先使用`schema`参数的示例值。
-2. 若示例值未填写，则`String`类型参数mock数据为`"value"`，`Boolean`与`Number`会随机
+1. 生成配置时，会优先使用`JSON`参数的示例值。
+2. 若示例值未填写，则`String`类型参数配置为`"value"`，`Boolean`与`Number`会随机
 
 ```javascript
-// schema
+// JSON
 {
   success: {
     type: Boolean,
@@ -123,7 +123,7 @@ Schema = {
 ```
 
 ### 建议
-* 如果对于假数据随机性要求不高，不建议写mock语法，也不需要填写`Schema`的`Example`，系统会自动生成假数据。
+* 如果对于假数据随机性要求不高，不建议写mock语法，也不需要填写`配置`的`JSON`，系统会自动生成假数据。
 
 ## 关于分组
 

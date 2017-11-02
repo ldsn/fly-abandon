@@ -10,9 +10,9 @@
     </el-button-group>
    </div>
    <div class="text item">
-     <label class="manager"><code>Manager:</code></label><input v-model="manager" readonly :id="data._id" />
+     <label class="manager"><code>管理员:</code></label><input v-model="manager" readonly :id="data._id" />
    </div>
-   <div class="text item">
+   <div class="text item" style="display:none">
      <label><code>Method :</code></label>{{data.options.method}}
    </div>
   </el-card>
