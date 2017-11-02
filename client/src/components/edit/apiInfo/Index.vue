@@ -1,10 +1,10 @@
 <template>
   <div class="api-info el-col" v-side-bar>
     <el-form>
-      <el-form-item label="接口名称" class="required">
+      <el-form-item label="配置名称" class="required">
         <el-input auto-complete="off" v-model="name"></el-input>
       </el-form-item>
-      <el-form-item label="接口分组" class="required">
+      <el-form-item label="配置分组" class="required">
         <i class="el-icon-plus title-icon create-group" @click="showCreateGroup = true"></i>
         <div class="group-select">
           <el-row type="flex" >
@@ -20,6 +20,7 @@
           </el-row>
         </div>
       </el-form-item>
+      <!--
       <el-form-item label="测试地址">
         <el-input auto-complete="off" v-model="devUrl" placeholder="请填写绝对路径"></el-input>
       </el-form-item>
@@ -41,6 +42,7 @@
           <el-radio :label="2">转发测试</el-radio>
         </el-radio-group>
       </el-form-item>
+      -->
       <el-form-item label="历史记录" class="history-item" v-if="history && history.records.length">
         <api-history :history="history"></api-history>
       </el-form-item>

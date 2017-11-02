@@ -41,7 +41,7 @@ function buildParams (json, oldParams) {
   }
   return params
 }
-export default (json, oldParams = null, statusText = 'status1', status = 200) => {
+export default (json, oldParams = null, statusText = '状态1', status = 200) => {
   const schema = {
     status,
     statusText,

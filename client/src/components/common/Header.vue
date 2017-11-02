@@ -9,9 +9,9 @@
           mode="horizontal"
           :router="true"
           >
-       <el-menu-item index="List" :route="{name: 'AllList'}">接口列表</el-menu-item>
-       <el-menu-item index="Create" :route="{name: 'Create'}">创建接口</el-menu-item>
-       <el-menu-item index="Document" :route="{name: 'Document'}">接口文档</el-menu-item>
+       <el-menu-item index="List" :route="{name: 'AllList'}">配置列表</el-menu-item>
+       <el-menu-item index="Create" :route="{name: 'Create'}">创建配置</el-menu-item>
+       <el-menu-item index="Document" :route="{name: 'Document'}">配置文档</el-menu-item>
        <el-menu-item index="Stat" :route="{name: 'Stat'}">数据统计</el-menu-item>
        <!-- 文档是外链，不用触发系统自身路由 -->
        <li class="el-menu-item" @click="showDocs">使用教程</li>

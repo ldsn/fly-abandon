@@ -18,7 +18,7 @@
         <el-input placeholder="备注" v-model="param.comment" @change="lazyUpdate"></el-input>
       </el-col>
       <el-col class="example">
-        <el-input placeholder="example" v-model="example" @change="lazyUpdate"></el-input>
+        <el-input placeholder="示例" v-model="example" @change="lazyUpdate"></el-input>
       </el-col>
     </el-row>
   </div>
@@ -175,6 +175,7 @@ export default {
     border: none;
     border-radius: 0;
     border-bottom: 1px solid #EFF2F7;
+    font-family: monospace;
   }
   .el-input-number {
     width: 100%;

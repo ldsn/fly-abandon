@@ -67,7 +67,7 @@ export default {
     buildResponse (parameterList) {
       return [{
         status: 200,
-        statusText: 'status1',
+        statusText: '状态1',
         example: null,
         params: this.buildParams(parameterList)
       }]

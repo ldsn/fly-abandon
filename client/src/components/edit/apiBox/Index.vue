@@ -1,7 +1,7 @@
 <template>
   <div class="api-box el-col">
     <url-box></url-box>
-    <setting-field title="Request" class="request-field">
+    <setting-field title="Request" class="request-field" style="display:none">
       <template scope="props">
         <request-box :fullscreen="props.fullscreen" :method="method"></request-box>
       </template>
@@ -16,13 +16,13 @@
         <result-box :fullscreen="props.fullscreen" :res-active="resActive"></result-box>
       </template>
     </setting-field>
-    <setting-field title="Response" v-if="response" >
+    <setting-field title="配置" v-if="response" >
       <response-config slot="header"></response-config>
       <template scope="props">
         <response :response="response" :fullscreen="props.fullscreen"></response>
       </template>
     </setting-field>
-    <setting-field title="Api Desc" >
+    <setting-field title="配置简介" >
       <desc-box></desc-box>
     </setting-field>
   </div>

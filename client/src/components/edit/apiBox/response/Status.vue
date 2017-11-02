@@ -1,6 +1,6 @@
 <template>
   <div class="status response-status">
-    <div class="control">Status</div>
+    <div class="control">状态</div>
     <ul>
       <li class="item"
           :class="[(r ? r.status : 0).toString(), {active: activeIndex === key}]"
